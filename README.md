@@ -1,56 +1,127 @@
-# Welcome to your Expo app 👋
+# Alô Câmara 📢
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Alô Câmara** é um aplicativo mobile que conecta cidadãos e prefeituras. Através dele, o usuário pode abrir chamados (dicas, problemas ou solicitações) diretamente para a prefeitura da sua cidade e avaliar os políticos locais. Já a prefeitura, através do perfil de **administrador**, pode visualizar e responder aos chamados recebidos.
 
-## Get started
+Projeto desenvolvido com [Expo](https://expo.dev) + [React Native](https://reactnative.dev), utilizando roteamento baseado em arquivos com [Expo Router](https://docs.expo.dev/router/introduction).
 
-1. Install dependencies
+---
+
+## ✨ Funcionalidades
+
+**Usuário (Cidadão)**
+- Cadastro e login
+- Abrir chamados (dicas, problemas ou outras solicitações)
+- Acompanhar status e histórico dos chamados
+- Avaliar políticos da cidade
+- Receber notificações de atualização dos chamados
+
+**Administrador (Prefeitura)**
+- Login administrativo
+- Visualizar todos os chamados recebidos
+- Responder e atualizar o status dos chamados
+
+> Documentação completa do projeto (regras de negócio, modelo de dados e estrutura de telas) disponível em [`documentacao-alo-camara.md`](./documentacao-alo-camara.md).
+
+---
+
+## 🚀 Como rodar o projeto
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) instalado (LTS recomendado)
+- [Git](https://git-scm.com/) instalado
+- App [Expo Go](https://expo.dev/go) no celular (para testar rapidamente) **ou** emulador Android/iOS configurado
+
+### Passo a passo
+
+1. Clone o repositório
+
+   ```bash
+   git clone https://github.com/<seu-usuario>/alocamara.git
+   cd alocamara
+   ```
+
+2. Instale as dependências
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Inicie o projeto
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+No terminal, o Expo vai mostrar um QR Code e algumas opções para abrir o app:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Emulador Android](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [Simulador iOS](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), para testar rapidamente sem precisar de build nativo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📂 Estrutura do projeto
 
-When you're ready, run:
+O projeto usa **file-based routing** do Expo Router. As telas ficam dentro da pasta `app/`, organizadas por grupos de rotas:
 
-```bash
-npm run reset-project
+```
+app/
+├── _layout.tsx          # Layout raiz (autenticação e redirecionamentos)
+├── (auth)/               # Telas de login e cadastro
+├── (user)/               # Telas do cidadão (chamados, políticos, perfil)
+└── (admin)/              # Telas da prefeitura (gestão de chamados)
+
+src/
+├── components/           # Componentes reutilizáveis
+├── constants/            # Constantes do projeto (cores, textos, etc.)
+├── contexts/             # Contextos globais (ex: AuthContext)
+├── hooks/                # Hooks customizados
+├── services/             # Chamadas de API
+├── types/                # Tipagens TypeScript
+└── utils/                # Funções utilitárias
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Para mais detalhes sobre o modelo de dados e regras de negócio, veja a [documentação do projeto](./documentacao-alo-camara.md).
 
-### Other setup steps
+---
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## 🛠️ Tecnologias
 
-## Learn more
+- [React Native](https://reactnative.dev)
+- [Expo](https://expo.dev)
+- [Expo Router](https://docs.expo.dev/router/introduction) (navegação baseada em arquivos)
+- [TypeScript](https://www.typescriptlang.org)
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## ⚙️ Outras configurações
 
-## Join the community
+- Para configurar o **ESLint**, rode `npx expo lint`, ou siga o guia ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
+- Para configurar **testes unitários**, siga o guia ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
+- Para saber mais sobre a configuração de **TypeScript** neste template, veja o guia ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🤝 Contribuindo
+
+Este é um projeto em equipe. Ao contribuir:
+
+1. Crie uma branch a partir da `main` (ex: `feature/tela-de-chamados`)
+2. Faça commits pequenos e descritivos
+3. Abra um Pull Request explicando o que foi feito
+4. Aguarde revisão de outro integrante antes do merge
+
+---
+
+## 📚 Saiba mais
+
+- [Documentação do Expo](https://docs.expo.dev/): fundamentos e guias avançados
+- [Documentação do Expo Router](https://docs.expo.dev/router/introduction/)
+- [Tutorial oficial do Expo](https://docs.expo.dev/tutorial/introduction/)
+
+## 🌐 Comunidade
+
+- [Expo no GitHub](https://github.com/expo/expo)
+- [Discord da Expo](https://chat.expo.dev)
