@@ -37,8 +37,8 @@ Projeto desenvolvido com [Expo](https://expo.dev) + [React Native](https://react
 1. Clone o repositório
 
    ```bash
-   git clone https://github.com/<seu-usuario>/alocamara.git
-   cd alocamara
+   git clone https://github.com/GuilhermeDeCosta/AloCamara
+   cd AloCamara
    ```
 
 2. Instale as dependências
