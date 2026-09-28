@@ -45,6 +45,7 @@ Projeto desenvolvido com [Expo](https://expo.dev) + [React Native](https://react
 
    ```bash
    npm install
+   npx expo install @expo/vector-icons
    ```
 
 3. Inicie o projeto
